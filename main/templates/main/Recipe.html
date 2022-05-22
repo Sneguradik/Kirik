@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="ctn" align="center">
+    <h1 class="ctnh1">{{recipe.title}}</h1>
+    <ul>
+    {% for i in recipe.ingredients %}
+        <li>{{i.name}} {{i.amount}} {{i.unit}}</li>
+    {%endfor%}
+    </ul>
+    <p class="ctnp">{{recipe.description}}</p>
+    {% if recipe.video != '0' %}
+        <iframe width="560" height="315" src="{{recipe.video}}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    {% endif %}
+</div>
+
+{% endblock %}
