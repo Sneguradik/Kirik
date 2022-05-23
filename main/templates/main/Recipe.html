@@ -4,8 +4,8 @@
 <div class="ctn" align="center">
     <h1 class="ctnh1">{{recipe.title}}</h1>
     <ul>
-    {% for i in recipe.ingredients %}
-        <li>{{i.name}} {{i.amount}} {{i.unit}}</li>
+    {% for i in recipe.ingredients.all %}
+        <li>{{i.name}} {{i.amount}} {{i.units}}</li>
     {%endfor%}
     </ul>
     <p class="ctnp">{{recipe.description}}</p>

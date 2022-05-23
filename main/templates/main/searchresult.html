@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="form">
+        {% if projects.count != 0 %}
+            {% for recipe in recipes %}
+            <div class="card">
+                <div class="card-header">
+                    {{recipe.name}}
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">{{recipe.category}}</h5>
+                  <p class="card-text">{{recipe.short_description}}</p>
+                  <a href="{% url 'SingleRecipe' recipe.id %}" class="btn btn-primary">Подробнее...</a>
+                </div>
+            </div>
+            {% endfor %}
+        {% else %}
+            <p>No Projects Published</p>
+        {% endif %}
+    </div>
+    
+</div>
+{% endblock %}

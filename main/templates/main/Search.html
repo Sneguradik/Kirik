@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Search{% endblock %}
+{% block content %}
+<div class="form" align="center">
+    <form action={% url 'Search' %} method="POST" >
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="{{form.search.id_for_label}}" class="form-label">Search</label>
+            {{form.search}}
+            <div class="invalid-feedback">
+                {{form.search.errors}}
+            </div>        
+        </div>
+        <div class="mb-3">
+            <label for="{{form.category.id_for_label}}" class="form-label">Category</label>
+            {{form.category}}
+            <div class="invalid-feedback">
+                {{form.category.errors}}
+            </div>        
+        </div>        
+        </div>
+        <div align="center">
+            <button  type="submit" class="btn btn-outline-primary" >Search</button>
+        </div>
+        
+
+    </form>
+</div>
+{% endblock %}

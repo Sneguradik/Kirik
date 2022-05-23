@@ -28,3 +28,7 @@ class UserRegisterForm(UserCreationForm):
 class UserLoginForm(AuthenticationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={"class":"form-control"}))
     password= forms.CharField(widget=forms.PasswordInput(attrs={"class":"form-control"}))
+
+class SearchForm(forms.Form):
+    search = forms.CharField(widget=forms.TextInput(attrs={"class":"form-control"}), required=False)
+    category = forms.ModelChoiceField(required=False,queryset=Category.objects.all(),widget=forms.Select(attrs={"class":"form-select"}))

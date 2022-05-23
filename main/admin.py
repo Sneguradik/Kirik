@@ -9,8 +9,8 @@ class IngredientAdmin(admin.ModelAdmin):
 class RecipeAdmin(admin.ModelAdmin):
     list_display = ["title", "category","author", 'status']
     list_filter = ["category",'status']
-    list_display_links = ['author']
-    search_fields = ['title', 'author', 'category' , 'short_description']
+    list_display_links = ['title']
+    search_fields = ['title', 'author', 'category' , 'short_description','description']
     
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ["name"]
